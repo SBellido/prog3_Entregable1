@@ -20,19 +20,18 @@ public class DoubleLinkedList implements Iterable<Integer> {
 		while (iterator.hasNext()) {
 			value1 = iterator.get();
 			iterator.next();
-//			Node nodAux = finalList.first;
 			value2 = iterator.get();
 			if(value1 == value2) {
 				getSecuense(value1, value2, iterator, finalList);
 			} else if (value1 < value2) {	
-				finalList.insertFront(value2);					
+//				Node nodAux = finalList.next;		
+				finalList.insertFront(value2);																	
 				if(iterator.hasNext() ) {
 					finalList.insertFront(value1);
-					iterator.next();
 				} 
 				getSecuense(value1, value2, iterator, finalList);
 			} else {
-				iterator.next();
+//				iterator.next();
 				DoubleLinkedList listAux2 = new DoubleLinkedList();
 				getSecuense(value1, value2, iterator, listAux2);
 			}
